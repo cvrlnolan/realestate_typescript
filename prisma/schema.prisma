@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+  // url      = "mongodb+srv://carlnolan:RWEOFVIUbi3DoVd3@clusteralpha.2q7kr.mongodb.net/real_estate?retryWrites=true&w=majority"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+model Estate {
+  id                String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  title             String
+  price             Int
+  status            String
+  address           String
+  province          String
+  postal_code       String
+  country           String
+  category          String
+  bedrooms          Int
+  baths             Int
+  surface_area      Int
+  property_briefing String
+  additional_info   String?
+  cooling           Boolean  @default(false)
+  heating           Boolean  @default(false)
+  internet          Boolean  @default(false)
+  furniture         Boolean  @default(false)
+  parking           Boolean  @default(false)
+  email             String
+  telephone         String
+  createDate        DateTime @default(now())
+  imgUrl            String
+  reviews           Int
+  totalRating       Int
+}
