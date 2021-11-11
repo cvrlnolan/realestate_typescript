@@ -3,8 +3,8 @@
 
 datasource db {
   provider = "mongodb"
-  // url      = env("DATABASE_URL")
-  url      = "mongodb+srv://carlnolan:RWEOFVIUbi3DoVd3@clusteralpha.2q7kr.mongodb.net/real_estate?retryWrites=true&w=majority"
+  url      = env("DATABASE_URL")
+  // url      = "mongodb+srv://carlnolan:RWEOFVIUbi3DoVd3@clusteralpha.2q7kr.mongodb.net/real_estate?retryWrites=true&w=majority"
 }
 
 generator client {
