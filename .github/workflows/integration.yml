@@ -38,8 +38,8 @@ jobs:
       - name: Run tests
         run: npm run test
         env:
-          DATABASE_URL: "foo"
-          DEBUG: "*"
+          DATABASE_URL: "mongo://foo"
+          #DEBUG: "*"
           
 
       - name: Upload coverage to Codecov
