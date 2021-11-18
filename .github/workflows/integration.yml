@@ -38,7 +38,7 @@ jobs:
       - name: Run tests
         run: npm run test
         env:
-          DATABASE_URL: "mongo://foo"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           #DEBUG: "*"
           
 
