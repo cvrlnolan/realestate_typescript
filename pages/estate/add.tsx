@@ -129,21 +129,22 @@ const AddEstate: NextPage = () => {
                   )}
 
                   {/* Page 5 */}
-                  {page === 5 && <Media />}
+                  {page === 5 && (
+                    <Media
+                      page={page}
+                      goBack={goBack}
+                      goNextPage={goNextPage}
+                    />
+                  )}
 
                   {/* Page 6 (last step) */}
-                  {page === 6 && <ContactInfo />}
-
-                  {/* {page === 6 && (
-                    <Button
-                      type="submit"
-                      leftIcon={<CheckCircleIcon />}
-                      colorScheme="green"
-                      isDisabled={!isValid}
-                    >
-                      Submit
-                    </Button>
-                  )} */}
+                  {page === 6 && (
+                    <ContactInfo
+                      page={page}
+                      goBack={goBack}
+                      goNextPage={goNextPage}
+                    />
+                  )}
                 </Stack>
               </form>
             </FormProvider>

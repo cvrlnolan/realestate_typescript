@@ -2,8 +2,10 @@ import React, { useState, createRef } from "react";
 import { Heading, Image, Text, Button } from "@chakra-ui/react";
 import Compressor from "compressorjs";
 import { AttachmentIcon } from "@chakra-ui/icons";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const Media = () => {
+const Media = (props: Props) => {
   const [image, setImage] = useState<Blob | null>();
 
   const [preview, setPreviewImg] = useState<string | null>();
@@ -53,6 +55,11 @@ const Media = () => {
       >
         Browse Images
       </Button>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+      />
     </>
   );
 };

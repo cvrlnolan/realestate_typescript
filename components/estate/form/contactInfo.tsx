@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import AlertPop from "@/components/formAlert";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const ContactInfo = () => {
+const ContactInfo = (props: Props) => {
   const {
     register,
     formState: { errors, isValid },
@@ -57,6 +59,12 @@ const ContactInfo = () => {
         </InputGroup>
         {errors.telephone && <AlertPop title={errors.telephone.message} />}
       </FormControl>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };
