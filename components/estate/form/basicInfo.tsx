@@ -12,8 +12,10 @@ import {
   Radio,
 } from "@chakra-ui/react";
 import AlertPop from "@/components/formAlert";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const BasicInfo = () => {
+const BasicInfo = (props: Props) => {
   const {
     register,
     formState: { errors, isValid },
@@ -29,13 +31,7 @@ const BasicInfo = () => {
         <Input
           variant="flushed"
           placeholder="ex: Modern Apartment Downtown..."
-          {...register("title", {
-            required: "Please enter a title",
-            minLength: {
-              value: 8,
-              message: "Title is too short",
-            },
-          })}
+          {...register("title")}
         />
         {errors.title && <AlertPop title={errors.title.message} />}
       </FormControl>
@@ -53,15 +49,6 @@ const BasicInfo = () => {
             variant="flushed"
             type="number"
             {...register("price", {
-              required: "Please enter a price",
-              min: {
-                value: 100,
-                message: "Price too short or invalid",
-              },
-              pattern: {
-                value: numericPattern,
-                message: "Invalid price format",
-              },
               valueAsNumber: true,
             })}
           />
@@ -92,6 +79,12 @@ const BasicInfo = () => {
         </RadioGroup>
         {errors.status && <AlertPop title={errors.status.message} />}
       </FormControl>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };

@@ -35,17 +35,7 @@ const ContactInfo = () => {
           >
             <EmailIcon />
           </InputLeftElement>
-          <Input
-            variant="flushed"
-            //   name="email"
-            {...register("email", {
-              required: "Enter contact email address",
-              pattern: {
-                value: emailPattern,
-                message: "Invalid email format",
-              },
-            })}
-          />
+          <Input variant="flushed" {...register("email")} />
         </InputGroup>
         {errors.email && <AlertPop title={errors.email.message} />}
       </FormControl>
@@ -61,15 +51,8 @@ const ContactInfo = () => {
           </InputLeftElement>
           <Input
             variant="flushed"
-            //   name="telephone"
             placeholder="ex: +237XXXXX..."
-            {...register("telephone", {
-              required: "Enter contact telephone number",
-              pattern: {
-                value: phonePattern,
-                message: "Invalid phone number format",
-              },
-            })}
+            {...register("telephone")}
           />
         </InputGroup>
         {errors.telephone && <AlertPop title={errors.telephone.message} />}

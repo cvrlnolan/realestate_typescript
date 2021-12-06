@@ -1,9 +1,14 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { Heading, Stack, Checkbox } from "@chakra-ui/react";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const Appliances = () => {
-  const { register } = useFormContext();
+const Appliances = (props: Props) => {
+  const {
+    register,
+    formState: { isValid },
+  } = useFormContext();
   return (
     <>
       <Heading>Appliances</Heading>
@@ -14,6 +19,12 @@ const Appliances = () => {
         <Checkbox {...register("furniture")}>Furniture</Checkbox>
         <Checkbox {...register("parking")}>Parking</Checkbox>
       </Stack>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };

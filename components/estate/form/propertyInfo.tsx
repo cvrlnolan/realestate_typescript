@@ -16,14 +16,14 @@ import {
 } from "@chakra-ui/react";
 import AlertPop from "@/components/formAlert";
 import { categoryOptions } from "@/assets/categories";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const PropertyInfo = () => {
+const PropertyInfo = (props: Props) => {
   const {
     register,
     formState: { errors, isValid },
   } = useFormContext();
-
-  const numericPattern = /^-?\d*\.?\d*$/;
 
   return (
     <>
@@ -33,9 +33,7 @@ const PropertyInfo = () => {
         <Select
           variant="filled"
           placeholder="Select a category"
-          {...register("category", {
-            required: "Select a category",
-          })}
+          {...register("category")}
         >
           {categoryOptions.map((category) => (
             <option key={category.key} value={category.value}>
@@ -50,7 +48,6 @@ const PropertyInfo = () => {
         <NumberInput variant="flushed" name="bedrooms" min={0}>
           <NumberInputField
             {...register("bedrooms", {
-              required: "Specify the number of bedrooms",
               valueAsNumber: true,
             })}
           />
@@ -66,7 +63,6 @@ const PropertyInfo = () => {
         <NumberInput variant="flushed" name="baths" min={0}>
           <NumberInputField
             {...register("baths", {
-              required: "Specify the number of bathrooms",
               valueAsNumber: true,
             })}
           />
@@ -84,15 +80,6 @@ const PropertyInfo = () => {
             type="number"
             variant="flushed"
             {...register("surface_area", {
-              required: "Enter the surface area of the property",
-              min: {
-                value: 50,
-                message: "Small surface area or invalid",
-              },
-              pattern: {
-                value: numericPattern,
-                message: "Invalid surface area data format",
-              },
               valueAsNumber: true,
             })}
           />
@@ -108,6 +95,12 @@ const PropertyInfo = () => {
           <AlertPop title={errors.surface_area.message} />
         )}
       </FormControl>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };

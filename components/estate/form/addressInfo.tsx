@@ -9,8 +9,10 @@ import {
 } from "@chakra-ui/react";
 import AlertPop from "@/components/formAlert";
 import { countryOptions } from "@/assets/countries";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const AddressInfo = () => {
+const AddressInfo = (props: Props) => {
   const {
     register,
     formState: { errors, isValid },
@@ -21,44 +23,17 @@ const AddressInfo = () => {
       <Heading>Address Information</Heading>
       <FormControl>
         <FormLabel>Address</FormLabel>
-        <Input
-          variant="flushed"
-          {...register("address", {
-            required: "Please enter an address",
-            minLength: {
-              value: 8,
-              message: "Address name too short",
-            },
-          })}
-        />
+        <Input variant="flushed" {...register("address")} />
         {errors.address && <AlertPop title={errors.address.message} />}
       </FormControl>
       <FormControl>
         <FormLabel>State/Province</FormLabel>
-        <Input
-          variant="flushed"
-          {...register("province", {
-            required: "Please enter a state or province",
-            minLength: {
-              value: 3,
-              message: "State/Province name too short",
-            },
-          })}
-        />
+        <Input variant="flushed" {...register("province")} />
         {errors.province && <AlertPop title={errors.province.message} />}
       </FormControl>
       <FormControl>
         <FormLabel>Postal Code</FormLabel>
-        <Input
-          variant="flushed"
-          {...register("postal_code", {
-            required: "Enter a valid postal code",
-            minLength: {
-              value: 4,
-              message: "Enter a valid postal code",
-            },
-          })}
-        />
+        <Input variant="flushed" {...register("postal_code")} />
         {errors.postal_code && <AlertPop title={errors.postal_code.message} />}
       </FormControl>
       <FormControl>
@@ -66,9 +41,7 @@ const AddressInfo = () => {
         <Select
           variant="filled"
           placeholder="Select a country"
-          {...register("country", {
-            required: "Select a country",
-          })}
+          {...register("country")}
         >
           {countryOptions.map((country) => (
             <option key={country.key} value={country.value}>
@@ -78,6 +51,12 @@ const AddressInfo = () => {
         </Select>
         {errors.country && <AlertPop title={errors.country.message} />}
       </FormControl>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };

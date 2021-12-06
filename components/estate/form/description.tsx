@@ -2,8 +2,10 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { Heading, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
 import AlertPop from "@/components/formAlert";
+import type { Props } from "@/assets/types";
+import FormButtons from "./formButtons";
 
-const Description = () => {
+const Description = (props: Props) => {
   const {
     register,
     formState: { errors, isValid },
@@ -19,13 +21,7 @@ const Description = () => {
           size="lg"
           maxH="sm"
           resize="vertical"
-          {...register("property_briefing", {
-            required: "Write a little briefing about the property",
-            minLength: {
-              value: 20,
-              message: "Briefing too short",
-            },
-          })}
+          {...register("property_briefing")}
         />
         {errors.property_briefing && (
           <AlertPop title={errors.property_briefing.message} />
@@ -41,6 +37,12 @@ const Description = () => {
           {...register("additional_info")}
         />
       </FormControl>
+      <FormButtons
+        page={props.page}
+        goBack={props.goBack}
+        goNextPage={props.goNextPage}
+        isValid={isValid}
+      />
     </>
   );
 };
