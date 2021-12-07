@@ -45,7 +45,7 @@ export const schema = z.object({
     .nonempty("Enter contact telephone number")
     .regex(phonePattern, "Invalid phone number format"),
   createDate: z.date().default(new Date()),
-  imgUrl: z.string().url(),
+  imgUrl: z.string().url().nonempty(),
   reviews: z.number().default(0),
   totalRating: z.number().default(0),
 });

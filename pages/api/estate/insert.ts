@@ -19,6 +19,5 @@ export default async function handler(
   } catch (e: any) {
     console.log(e.message);
     res.status(500).end();
-  } finally {
   }
 }

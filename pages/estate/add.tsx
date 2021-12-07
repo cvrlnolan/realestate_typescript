@@ -13,6 +13,8 @@ import PropertyInfo from "@/components/estate/form/propertyInfo";
 import Media from "@/components/estate/form/media";
 import ContactInfo from "@/components/estate/form/contactInfo";
 import { schema } from "@/lib/estate/formSchema";
+import { mockData } from "@/lib/estate/mockData";
+import axios from "axios";
 
 const AddEstate: NextPage = () => {
   const toast = useToast();
@@ -20,6 +22,7 @@ const AddEstate: NextPage = () => {
   const methods = useForm({
     mode: "all",
     resolver: zodResolver(schema),
+    defaultValues: mockData,
   });
 
   const {
@@ -40,6 +43,13 @@ const AddEstate: NextPage = () => {
 
   const onSubmit = async (data: any) => {
     console.log(data);
+    try {
+      const res = await axios.post("/api/estate/insert", data);
+      const resData = res.data;
+      console.log(resData);
+    } catch (e: any) {
+      console.log(e.message);
+    }
   };
 
   return (

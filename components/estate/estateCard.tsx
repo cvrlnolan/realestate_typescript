@@ -4,7 +4,6 @@ import {
   Flex,
   Heading,
   Text,
-  Badge,
   Stack,
   chakra,
   useColorMode,

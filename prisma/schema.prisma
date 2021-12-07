@@ -14,7 +14,7 @@ generator client {
 model Estate {
   id                String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
   title             String
-  price             Int
+  price             Float
   status            String
   address           String
   province          String
