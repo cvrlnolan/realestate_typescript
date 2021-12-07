@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Container, Stack, Box, Button, useToast } from "@chakra-ui/react";
-import {
-  ArrowForwardIcon,
-  ArrowBackIcon,
-  CheckCircleIcon,
-} from "@chakra-ui/icons";
+import { Container, Stack, Box, useToast } from "@chakra-ui/react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
 import Navbar from "@/components/layout/navbar";
-import UploadImage from "@/lib/estate/uploadImage";
 import BasicInfo from "@/components/estate/form/basicInfo";
 import AddressInfo from "@/components/estate/form/addressInfo";
 import Description from "@/components/estate/form/description";
@@ -34,8 +28,6 @@ const AddEstate: NextPage = () => {
 
   const [page, setPage] = useState(0);
 
-  const [image, setImage] = useState<Blob | null>();
-
   function goNextPage() {
     if (page === 6) return;
     setPage((page) => page + 1);
@@ -48,27 +40,6 @@ const AddEstate: NextPage = () => {
 
   const onSubmit = async (data: any) => {
     console.log(data);
-    if (!image) {
-      toast({
-        title: "No image selected.",
-        description: "Please choose a display image for the estate.",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-      return;
-    }
-    const estateData = {
-      ...data,
-      totalRating: 0,
-      reviews: 0,
-    };
-    const uploadData = {
-      imageData: image,
-      estateData,
-      toast,
-    };
-    await UploadImage(uploadData);
   };
 
   return (
