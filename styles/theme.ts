@@ -7,7 +7,7 @@ export const config = {
   useSystemColorMode: false,
   fonts: {
     body: "Lato, sans-serif",
-    heading: "Lato, sans-serif",
+    heading: "Acme, sans-serif",
   },
 };
 

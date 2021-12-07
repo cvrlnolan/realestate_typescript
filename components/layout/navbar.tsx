@@ -74,7 +74,14 @@ export default function Navbar({ children }: Props) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Heading fontSize={{ sm: "lg", md: "xl" }}>RealEstate</Heading>
+            <Link href="/" passHref>
+              <Heading
+                fontSize={{ sm: "lg", md: "xl" }}
+                _hover={{ cursor: "pointer" }}
+              >
+                RealEstate
+              </Heading>
+            </Link>
             <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
               {Links.map((link) => (
                 <NavLink

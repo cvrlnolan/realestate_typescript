@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Stack, Heading, Text } from "@chakra-ui/react";
+import { Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Head from "next/head";
 import Navbar from "@/components/layout/navbar";
