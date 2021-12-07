@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import {
   Box,
+  Heading,
   Flex,
   HStack,
   IconButton,
@@ -26,7 +27,7 @@ type LinkProps = {
 };
 
 const Links = [
-  { key: "Listings", text: "Listings", href: "/" },
+  { key: "Listings", text: "Listings", href: "/listings" },
   {
     key: "Reposirtory",
     text: "Repository",
@@ -58,7 +59,12 @@ export default function Navbar({ children }: Props) {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box
+        bg={useColorModeValue("white", "gray.900")}
+        w="full"
+        px={4}
+        shadow="lg"
+      >
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
@@ -68,7 +74,7 @@ export default function Navbar({ children }: Props) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>RealEstate</Box>
+            <Heading fontSize={{ sm: "lg", md: "xl" }}>RealEstate</Heading>
             <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
               {Links.map((link) => (
                 <NavLink
@@ -108,8 +114,10 @@ export default function Navbar({ children }: Props) {
         ) : null}
       </Box>
 
-      <Box p={4} justifyContent="space-between">
-        {children}
+      <Flex flexDir="column" w="full">
+        <Flex flexDir="row" minH="md">
+          {children}
+        </Flex>
         <Flex w="full" h="20px" p={8}>
           <Text w="full" textAlign="center" fontWeight="bold">
             Developed by
@@ -130,7 +138,7 @@ export default function Navbar({ children }: Props) {
             </Link>
           </Text>
         </Flex>
-      </Box>
+      </Flex>
     </>
   );
 }
