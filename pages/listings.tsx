@@ -21,12 +21,12 @@ const Listings = ({ estatesData }: Props) => {
       <Navbar>
         <Container p={4} maxW="container.xl" w="full" centerContent>
           <SimpleGrid columns={[1, 2, 2, 3]} spacing="20px">
-            {estatesData.map((estate) => (
-              <EstateCard key={estate.id} estate={estate} />
-            ))}
             {/* {estatesData.map((estate) => (
-              <NewCard key={estate.id} estate={estate} />
+              <EstateCard key={estate.id} estate={estate} />
             ))} */}
+            {estatesData.map((estate) => (
+              <NewCard key={estate.id} estate={estate} />
+            ))}
           </SimpleGrid>
         </Container>
       </Navbar>
