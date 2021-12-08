@@ -6,8 +6,8 @@ export const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
   fonts: {
-    body: "Lato, sans-serif",
-    heading: "Acme, sans-serif",
+    body: "Inter, sans-serif",
+    heading: "Bebas Neue, sans-serif",
   },
 };
 

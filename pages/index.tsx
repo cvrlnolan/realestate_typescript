@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Stack, Text } from "@chakra-ui/react";
+import { Flex, Stack, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import Head from "next/head";
 import Navbar from "@/components/layout/navbar";
@@ -38,6 +38,7 @@ const Home = () => {
               <Text fontSize="2xl" textAlign="center" letterSpacing="tight">
                 Visit, buy or rent.
               </Text>
+              <Button colorScheme="blue">Show Listings</Button>
             </Stack>
           </Flex>
         </Flex>
