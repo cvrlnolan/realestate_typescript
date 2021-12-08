@@ -79,7 +79,7 @@ export default function Navbar({ children }: Props) {
                 fontSize={{ sm: "lg", md: "xl" }}
                 _hover={{ cursor: "pointer" }}
               >
-                RealEstate
+                RealEstates
               </Heading>
             </Link>
             <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>

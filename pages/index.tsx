@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Stack, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
 import Head from "next/head";
 import Navbar from "@/components/layout/navbar";
 import bannerImg from "public/image.jpeg";
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>RealEstates | Listings</title>
+        <title>RealEstates</title>
       </Head>
       <Navbar>
         <Flex
@@ -33,12 +34,14 @@ const Home = () => {
                 textAlign="center"
                 letterSpacing="tight"
               >
-                Welcome to RealEstate
+                Welcome to RealEstates
               </Text>
               <Text fontSize="2xl" textAlign="center" letterSpacing="tight">
                 Visit, buy or rent.
               </Text>
-              <Button colorScheme="blue">Show Listings</Button>
+              <Link href="/listings" passHref>
+                <Button colorScheme="blue">Show Listings</Button>
+              </Link>
             </Stack>
           </Flex>
         </Flex>

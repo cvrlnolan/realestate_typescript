@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/navbar";
 import EstateCard from "@/components/estate/estateCard";
 import { prisma } from "@/lib/prisma";
 import { Estate } from ".prisma/client";
+import NewCard from "@/components/estate/newCard";
 
 type Props = {
   estatesData: Estate[];
@@ -23,6 +24,9 @@ const Listings = ({ estatesData }: Props) => {
             {estatesData.map((estate) => (
               <EstateCard key={estate.id} estate={estate} />
             ))}
+            {/* {estatesData.map((estate) => (
+              <NewCard key={estate.id} estate={estate} />
+            ))} */}
           </SimpleGrid>
         </Container>
       </Navbar>
