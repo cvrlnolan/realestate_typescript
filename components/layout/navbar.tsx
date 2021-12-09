@@ -122,7 +122,7 @@ export default function Navbar({ children }: Props) {
       </Box>
 
       <Flex flexDir="column" w="full">
-        <Flex flexDir="row" minH="md">
+        <Flex flexDir="row" w="full" minH="md">
           {children}
         </Flex>
         <Flex w="full" h="20px" p={8}>
