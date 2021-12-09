@@ -19,6 +19,7 @@ const NewCard = ({ estate }: Props) => {
             layout="fill"
             objectFit="cover"
             className="card_image"
+            priority
           />
           <Flex
             flexDir="column"

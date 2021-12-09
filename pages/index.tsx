@@ -25,6 +25,7 @@ const Home = () => {
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            priority
           />
           <Flex p={4} w="full" pos="absolute" justifyContent="center">
             <Stack spacing={4} textColor="white">

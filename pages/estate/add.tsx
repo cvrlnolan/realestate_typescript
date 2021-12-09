@@ -59,7 +59,7 @@ const AddEstate: NextPage = () => {
       </Head>
       <Navbar>
         <Container my={6} w="full" centerContent>
-          <Box maxW="xl" p={10} w="full" rounded="lg" boxShadow="lg">
+          <Box p={10} w="full" rounded="lg" boxShadow="lg">
             {/* Multi-step form */}
             <FormProvider {...methods}>
               <form onSubmit={methods.handleSubmit(onSubmit)}>
