@@ -46,16 +46,14 @@ const Index: NextPage = () => {
                 </Flex>
               </Stack>
               <Text>{faker.lorem.sentences(10)}</Text>
+              <Text>
+                {faker.address.streetAddress()}, {faker.address.state()}{" "}
+                {faker.address.country()}
+              </Text>
             </Stack>
           </Stack>
-          <Stack
-            direction="row"
-            w="full"
-            p={4}
-            spacing={16}
-            justifyContent="center"
-          >
-            <Stack direction="column" spacing={2}>
+          <Flex w="80%" mx="auto" p={4}>
+            <Stack direction="row" spacing={2}>
               <HStack spacing={2}>
                 <Text color="gray.500">Furnitured</Text>
                 {Math.random() < 0.5 ? <CheckIcon /> : <SmallCloseIcon />}
@@ -77,14 +75,7 @@ const Index: NextPage = () => {
                 {Math.random() < 0.5 ? <CheckIcon /> : <SmallCloseIcon />}
               </HStack>
             </Stack>
-            <Stack direction="column" spacing={4}>
-              <Text>
-                {faker.address.streetAddress()}, {faker.address.state()}{" "}
-                {faker.address.country()}
-              </Text>
-              <Text></Text>
-            </Stack>
-          </Stack>
+          </Flex>
         </Flex>
       </Navbar>
     </>
