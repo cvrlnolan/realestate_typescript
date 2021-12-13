@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Navbar from "@/components/layout/navbar";
-import { Flex, Box, Text, Stack, HStack } from "@chakra-ui/react";
+import { Flex, Box, Text, Stack, VStack } from "@chakra-ui/react";
 import { StarIcon, CheckIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import faker from "faker";
 
@@ -12,13 +12,20 @@ const Index: NextPage = () => {
       <Navbar>
         <Flex flexDir="column" w="full" mt={8} p={4}>
           <Stack
-            direction="row"
-            w="full"
+            direction={{ sm: "column", lg: "row" }}
+            w={{ sm: "full", lg: "80%" }}
             p={4}
             spacing={16}
-            justifyContent="center"
+            mx={{ lg: "auto" }}
+            // justifyContent="center"
           >
-            <Box w="450px" h="350px" pos="relative">
+            <Box
+              w="450px"
+              h="350px"
+              display="block"
+              mx={{ sm: "auto", lg: "0" }}
+              pos="relative"
+            >
               <Image
                 alt="estate_img"
                 src="/image.jpeg"
@@ -27,7 +34,12 @@ const Index: NextPage = () => {
                 priority
               />
             </Box>
-            <Stack w="40%" direction="column" spacing={4}>
+            <Flex w={{ sm: "full" }} flexDir="column">
+              <Text fontSize="2xl" fontWeight="bold">
+                {faker.random.words(4)}
+              </Text>
+            </Flex>
+            {/* <Stack w={{ sm: "full", lg: "40%" }} direction="column" spacing={4}>
               <Text fontSize="2xl" fontWeight="bold">
                 {faker.random.words(4)}
               </Text>
@@ -50,10 +62,10 @@ const Index: NextPage = () => {
                 {faker.address.streetAddress()}, {faker.address.state()}{" "}
                 {faker.address.country()}
               </Text>
-            </Stack>
+            </Stack> */}
           </Stack>
           <Flex w="80%" mx="auto" p={4}>
-            <Stack direction="row" spacing={2}>
+            {/* <Stack direction={{ sm: "column", md: "row" }} spacing={2}>
               <HStack spacing={2}>
                 <Text color="gray.500">Furnitured</Text>
                 {Math.random() < 0.5 ? <CheckIcon /> : <SmallCloseIcon />}
@@ -74,7 +86,7 @@ const Index: NextPage = () => {
                 <Text color="gray.500">Parking</Text>
                 {Math.random() < 0.5 ? <CheckIcon /> : <SmallCloseIcon />}
               </HStack>
-            </Stack>
+            </Stack> */}
           </Flex>
         </Flex>
       </Navbar>
