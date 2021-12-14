@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import axios from "axios";
 import useSWR from "swr";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Navbar from "@/components/layout/navbar";
 import {
+  Wrap,
   Flex,
-  Heading,
-  Text,
   Box,
+  Text,
   Stack,
-  HStack,
-  SimpleGrid,
+  List,
+  ListItem,
+  IconButton,
   Button,
   Modal,
   ModalOverlay,
@@ -22,25 +23,60 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Spinner,
   useDisclosure,
   useToast,
-  Skeleton,
-  chakra,
 } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
+import {
+  FaChair,
+  FaThermometerFull,
+  FaRegSnowflake,
+  FaWifi,
+  FaCar,
+  FaStar,
+} from "react-icons/fa";
 import { Rating } from "react-simple-star-rating";
-import { StarIcon, CheckIcon, SmallCloseIcon } from "@chakra-ui/icons";
-import Navbar from "@/components/layout/navbar";
+import faker from "faker";
 
-const EstatePage: NextPage = () => {
+const Index: NextPage = () => {
   const router = useRouter();
 
   const toast = useToast();
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   const { id } = router.query;
 
-  const [rating, setRating] = useState(0);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+
+  const { data: estate, error } = useSWR(() => "/api/estate/" + id, fetcher);
+
+  if (error) {
+    return (
+      <>
+        <Navbar>
+          <Flex w="full" h="screen" justifyContent="center" alignItems="center">
+            {error.message}
+          </Flex>
+        </Navbar>
+      </>
+    );
+  }
+
+  if (!estate) {
+    return (
+      <>
+        <Navbar>
+          <Flex w="full" h="screen" justifyContent="center" alignItems="center">
+            <Spinner size="xl" />
+          </Flex>
+        </Navbar>
+      </>
+    );
+  }
+
+  let rating = 0;
 
   const handleRating = async (rate: number) => {
     console.log(rate);
@@ -61,75 +97,45 @@ const EstatePage: NextPage = () => {
     }
   };
 
-  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
-
-  const { data: estate, error } = useSWR(() => "/api/estate/" + id, fetcher);
-
-  if (error) {
-    return (
-      <>
-        <div>{error.message}</div>
-      </>
-    );
-  }
-
-  if (!estate) {
-    return (
-      <>
-        <Navbar>
-          <Skeleton height="container.xl">
-            <Box
-              maxW="container.xl"
-              w="full"
-              p={8}
-              rounded="lg"
-              boxShadow="lg"
-            ></Box>
-          </Skeleton>
-        </Navbar>
-      </>
-    );
-  }
-
-  type Dimensions = {
-    h: string | number;
-    w: string | number;
-  };
-
-  const toBase64 = (str: string) =>
-    typeof window === "undefined"
-      ? Buffer.from(str).toString("base64")
-      : window.btoa(str);
-
-  const shimmer = ({ w, h }: Dimensions) => `
-      <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <defs>
-          <linearGradient id="g">
-          <stop stop-color="#333" offset="20%" />
-          <stop stop-color="#222" offset="50%" />
-          <stop stop-color="#333" offset="70%" />
-          </linearGradient>
-      </defs>
-      <rect width="${w}" height="${h}" fill="#333" />
-      <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-      <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-      </svg>
-  `;
-
   return (
     <>
       <Head>
         <title>RealEstate | {estate.title}</title>
       </Head>
       <Navbar>
-        <Box maxW="container.xl" w="full" p={8} rounded="lg" boxShadow="lg">
-          <Stack alignItems="center" spacing={5}>
-            <Heading>{estate.title}</Heading>
-            <HStack spacing={2}>
-              <Flex>
-                {Array(5)
-                  .fill("")
-                  .map((_, i) => (
+        <Flex flexDir="column" w="full" mt={8} p={4}>
+          <Wrap
+            w={{ sm: "full", lg: "80%" }}
+            mx={{ lg: "auto" }}
+            p={4}
+            spacing="50px"
+          >
+            <Box
+              w="450px"
+              h="350px"
+              display="block"
+              mx={{ sm: "auto", lg: "0" }}
+              pos="relative"
+            >
+              <Image
+                alt="estate_img"
+                src={estate.imgUrl}
+                layout="fill"
+                objectFit="cover"
+                className="page_image"
+                priority
+              />
+            </Box>
+            <Stack w={{ sm: "full", lg: "40%" }} direction="column" spacing={4}>
+              <Text fontSize="2xl" fontWeight="bold">
+                {estate.title}
+              </Text>
+              <Stack direction="row" spacing={4} alignItems="center">
+                <Text fontSize="lg" fontWeight="bold">{`USD${estate.price}${
+                  estate.status === "rent" && "/month"
+                }`}</Text>
+                <Flex>
+                  {[...Array(5)].map((_, i: number) => (
                     <StarIcon
                       key={i}
                       color={
@@ -139,105 +145,110 @@ const EstatePage: NextPage = () => {
                       }
                     />
                   ))}
-              </Flex>
-              <Text color="gray.500">{estate.reviews} reviews</Text>
-            </HStack>
-            <Box alignSelf="center" boxSize={["xs", "md"]} pos="relative">
-              <Image
-                src={estate.imgUrl}
-                alt="estate_img"
-                layout="fill"
-                objectFit="cover"
-                className="page_image"
-                blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                  shimmer({ w: 400, h: 400 })
-                )}`}
-              />
-            </Box>
-            <Text color="gray.500" w="full">
-              {estate.property_briefing}
-            </Text>
-            <SimpleGrid w="full" columns={[1, 2, 3]} spacing={10}>
-              <Stack direction="column" spacing={2}>
-                <Text color="gray.500">{estate.address}</Text>
-                <Text color="gray.500">
-                  {estate.postal_code}, {estate.province}
-                </Text>
-                <Text color="gray.500">{estate.country}</Text>
+                </Flex>
+                <IconButton
+                  aria-label="rate_estate"
+                  icon={<FaStar />}
+                  rounded="full"
+                  variant="outline"
+                  onClick={onOpen}
+                />
               </Stack>
-              <Stack direction="column" spacing={2}>
-                <HStack spacing={2}>
-                  <Text color="gray.500">Furnitured</Text>
-                  {estate.furniture ? <CheckIcon /> : <SmallCloseIcon />}
-                </HStack>
-                <HStack spacing={2}>
-                  <Text color="gray.500">Heating</Text>
-                  {estate.heating ? <CheckIcon /> : <SmallCloseIcon />}
-                </HStack>
-                <HStack spacing={2}>
-                  <Text color="gray.500">Cooling</Text>
-                  {estate.cooling ? <CheckIcon /> : <SmallCloseIcon />}
-                </HStack>
-                <HStack spacing={2}>
-                  <Text color="gray.500">Internet</Text>
-                  {estate.internet ? <CheckIcon /> : <SmallCloseIcon />}
-                </HStack>
-                <HStack spacing={2}>
-                  <Text color="gray.500">Parking</Text>
-                  {estate.parking ? <CheckIcon /> : <SmallCloseIcon />}
-                </HStack>
-              </Stack>
-              <Stack direction="column" spacing={2}>
-                <Text color="gray.500" fontWeight="bold">
-                  Price: ${estate.price} {estate.status === "rent" && "/mo."}
-                </Text>
-                <Link href={`mailto:${estate.email}`} passHref>
-                  <chakra.a
-                    color="gray.500"
-                    _hover={{
-                      cursor: "pointer",
-                      color: "teal.500",
-                    }}
-                  >
-                    {estate.email}
-                  </chakra.a>
-                </Link>
-                <Text color="gray.500">{estate.telephone}</Text>
-              </Stack>
-            </SimpleGrid>
-            {estate.additional_info !== "" && (
-              <Text color="gray.500" w="full">
-                {estate.additional_info}
+              <Text>{estate.property_briefing}</Text>
+              <Text>
+                {`${estate.address}, ${estate.province} ${estate.country}`}
               </Text>
-            )}
-            <Button rightIcon={<StarIcon />} onClick={onOpen}>
-              Rate Estate
-            </Button>
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>Rate your visit</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <Rating
-                    onClick={handleRating}
-                    ratingValue={rating}
-                    transition={true}
-                  />
-                </ModalBody>
+            </Stack>
+          </Wrap>
+          <Flex w={{ sm: "w-full", lg: "80%" }} mx={{ lg: "auto" }} p={4}>
+            <List
+              display={{ sm: "block", lg: "inline-flex" }}
+              spacing={{ sm: 4, lg: 0 }}
+            >
+              <ListItem>
+                <Flex
+                  alignItems="center"
+                  textDecoration={estate.furniture ? "line-through" : ""}
+                >
+                  <span style={{ display: "inline-flex", marginRight: "5px" }}>
+                    <FaChair />
+                  </span>
+                  Furnitured
+                </Flex>
+              </ListItem>
+              <ListItem ml={{ lg: 4 }}>
+                <Flex
+                  alignItems="center"
+                  textDecoration={estate.heating ? "line-through" : ""}
+                >
+                  <span style={{ display: "inline-flex", marginRight: "5px" }}>
+                    <FaThermometerFull />
+                  </span>
+                  Heating
+                </Flex>
+              </ListItem>
+              <ListItem ml={{ lg: 4 }}>
+                <Flex
+                  alignItems="center"
+                  textDecoration={estate.cooling ? "line-through" : ""}
+                >
+                  <span style={{ display: "inline-flex", marginRight: "5px" }}>
+                    <FaRegSnowflake />
+                  </span>
+                  Cooling
+                </Flex>
+              </ListItem>
+              <ListItem ml={{ lg: 4 }}>
+                <Flex
+                  alignItems="center"
+                  textDecoration={estate.internet ? "line-through" : ""}
+                >
+                  <span style={{ display: "inline-flex", marginRight: "5px" }}>
+                    <FaWifi />
+                  </span>
+                  Internet
+                </Flex>
+              </ListItem>
+              <ListItem
+                ml={{ lg: 4 }}
+                textDecoration={estate.parking ? "line-through" : ""}
+              >
+                <Flex alignItems="center">
+                  <span style={{ display: "inline-flex", marginRight: "5px" }}>
+                    <FaCar />
+                  </span>
+                  Parking
+                </Flex>
+              </ListItem>
+            </List>
+          </Flex>
+          <Flex w={{ sm: "w-full", lg: "80%" }} mx={{ lg: "auto" }} p={4}>
+            <Text>{faker.lorem.sentences(10)}</Text>
+          </Flex>
+        </Flex>
+        <Modal isOpen={isOpen} onClose={onClose} isCentered>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Rate your visit</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Rating
+                onClick={handleRating}
+                ratingValue={rating}
+                transition={true}
+              />
+            </ModalBody>
 
-                <ModalFooter>
-                  <Button colorScheme="red" variant="ghost" onClick={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
-          </Stack>
-        </Box>
+            <ModalFooter>
+              <Button colorScheme="red" variant="ghost" onClick={onClose}>
+                Close
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Navbar>
     </>
   );
 };
 
-export default EstatePage;
+export default Index;
