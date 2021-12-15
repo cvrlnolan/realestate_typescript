@@ -132,7 +132,7 @@ const Index: NextPage = () => {
               </Text>
               <Stack direction="row" spacing={4} alignItems="center">
                 <Text fontSize="lg" fontWeight="bold">{`USD${estate.price}${
-                  estate.status === "rent" && "/month"
+                  estate.status === "rent" ? "/month" : ""
                 }`}</Text>
                 <Flex>
                   {[...Array(5)].map((_, i: number) => (
