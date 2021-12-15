@@ -21,10 +21,12 @@ const Home = () => {
         >
           <Image
             alt="intro"
-            src={bannerImg}
+            // src={bannerImg}
+            src="/image.jpeg"
             layout="fill"
             objectFit="cover"
-            placeholder="blur"
+            // placeholder="blur"
+            // blurDataURL="data:image/jpeg;base64,/L#I#[hV@xuj[~qkCofj[o0oLRjof"
             priority
           />
           <Flex p={4} w="full" pos="absolute" justifyContent="center">

@@ -33,7 +33,9 @@ const BasicInfo = (props: Props) => {
           placeholder="ex: Modern Apartment Downtown..."
           {...register("title")}
         />
-        {errors.title && <AlertPop title={errors.title.message} />}
+        {errors.title && (
+          <AlertPop title={errors.title.message} testId="titleError" />
+        )}
       </FormControl>
       <FormControl>
         <FormLabel>Price</FormLabel>
@@ -53,7 +55,9 @@ const BasicInfo = (props: Props) => {
             })}
           />
         </InputGroup>
-        {errors.price && <AlertPop title={errors.price.message} />}
+        {errors.price && (
+          <AlertPop title={errors.price.message} testId="priceError" />
+        )}
       </FormControl>
       <FormControl>
         <FormLabel>Status</FormLabel>

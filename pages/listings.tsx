@@ -3,13 +3,13 @@ import { GetStaticProps } from "next";
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import Head from "next/head";
 import Navbar from "@/components/layout/navbar";
-import EstateCard from "@/components/estate/estateCard";
 import { prisma } from "@/lib/prisma";
 import { Estate } from ".prisma/client";
-import NewCard from "@/components/estate/newCard";
+import NewCard from "@/components/estate/estateCard";
 
 type Props = {
-  estatesData: Estate[];
+  // For unit testing sake, set union type of any
+  estatesData: Estate[] | any;
 };
 
 const Listings = ({ estatesData }: Props) => {
@@ -21,10 +21,7 @@ const Listings = ({ estatesData }: Props) => {
       <Navbar>
         <Container p={4} maxW="container.xl" w="full" centerContent>
           <SimpleGrid columns={[1, 2, 2, 3]} spacing="20px">
-            {/* {estatesData.map((estate) => (
-              <EstateCard key={estate.id} estate={estate} />
-            ))} */}
-            {estatesData.map((estate) => (
+            {estatesData.map((estate: Estate) => (
               <NewCard key={estate.id} estate={estate} />
             ))}
           </SimpleGrid>

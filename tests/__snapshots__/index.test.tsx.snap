@@ -3,7 +3,7 @@
 exports[`Index Page should match snapshot 1`] = `
 Array [
   <div
-    className="css-1m65r4j"
+    className="css-1hzqxck"
   >
     <div
       className="css-jfo7z"
@@ -29,17 +29,20 @@ Array [
       <div
         className="chakra-stack css-16awuyr"
       >
-        <div
-          className="css-0"
+        <h2
+          className="chakra-heading css-13mgebn"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          RealEstate
-        </div>
+          RealEstates
+        </h2>
         <nav
           className="chakra-stack css-t14v28"
         >
           <a
             className="css-3xxwyh"
-            href="/"
+            href="/listings"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -137,408 +140,126 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1ilk43r"
+    className="css-fxiqdw"
   >
     <div
-      className="chakra-container css-4cl8wm"
+      className="css-zge4aw"
     >
       <div
-        className="css-95cf8c"
+        className="css-hm1vf4"
       >
-        <a
-          className="css-p6s8gx"
-          href="/estate/undefined"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <span
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": "initial",
+              "left": 0,
+              "margin": 0,
+              "opacity": 1,
+              "overflow": "hidden",
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "initial",
+            }
+          }
+        >
+          <img
+            alt="intro"
+            data-nimg="fill"
+            decoding="async"
+            sizes="100vw"
+            src="/_next/image?url=%2Fimage.jpeg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimage.jpeg&w=640&q=75 640w, /_next/image?url=%2Fimage.jpeg&w=750&q=75 750w, /_next/image?url=%2Fimage.jpeg&w=828&q=75 828w, /_next/image?url=%2Fimage.jpeg&w=1080&q=75 1080w, /_next/image?url=%2Fimage.jpeg&w=1200&q=75 1200w, /_next/image?url=%2Fimage.jpeg&w=1920&q=75 1920w, /_next/image?url=%2Fimage.jpeg&w=2048&q=75 2048w, /_next/image?url=%2Fimage.jpeg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": "cover",
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="intro"
+              data-nimg="fill"
+              decoding="async"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=%2Fimage.jpeg&w=3840&q=75"
+              srcSet="/_next/image?url=%2Fimage.jpeg&w=640&q=75 640w, /_next/image?url=%2Fimage.jpeg&w=750&q=75 750w, /_next/image?url=%2Fimage.jpeg&w=828&q=75 828w, /_next/image?url=%2Fimage.jpeg&w=1080&q=75 1080w, /_next/image?url=%2Fimage.jpeg&w=1200&q=75 1200w, /_next/image?url=%2Fimage.jpeg&w=1920&q=75 1920w, /_next/image?url=%2Fimage.jpeg&w=2048&q=75 2048w, /_next/image?url=%2Fimage.jpeg&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": "cover",
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </span>
+        <div
+          className="css-tu502g"
         >
           <div
-            className="css-z3nv2h"
+            className="chakra-stack css-1phsyom"
           >
-            <div
-              className="css-1yzea99"
+            <p
+              className="chakra-text css-m0kk7z"
             >
-              <div
-                style={
-                  Object {
-                    "bottom": 0,
-                    "boxSizing": "border-box",
-                    "display": "block",
-                    "left": 0,
-                    "margin": 0,
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <img
-                  alt="card_image"
-                  data-nimg="fill"
-                  decoding="async"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                  style={
-                    Object {
-                      "border": "none",
-                      "bottom": 0,
-                      "boxSizing": "border-box",
-                      "display": "block",
-                      "height": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "maxHeight": "100%",
-                      "maxWidth": "100%",
-                      "minHeight": "100%",
-                      "minWidth": "100%",
-                      "objectFit": "cover",
-                      "objectPosition": undefined,
-                      "padding": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    }
-                  }
-                />
-                <noscript>
-                  <img
-                    alt="card_image"
-                    data-nimg="fill"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="100vw"
-                    src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=3840&q=75"
-                    srcSet="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3D03b46643-93ed-4057-adf1-b8308cdaabbb&w=3840&q=75 3840w"
-                    style={
-                      Object {
-                        "border": "none",
-                        "bottom": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": 0,
-                        "left": 0,
-                        "margin": "auto",
-                        "maxHeight": "100%",
-                        "maxWidth": "100%",
-                        "minHeight": "100%",
-                        "minWidth": "100%",
-                        "objectFit": "cover",
-                        "objectPosition": undefined,
-                        "padding": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                        "width": 0,
-                      }
-                    }
-                  />
-                </noscript>
-              </div>
-            </div>
-            <div
-              className="chakra-stack css-n21gh5"
+              Welcome to RealEstates
+            </p>
+            <p
+              className="chakra-text css-sw4nx8"
             >
-              <div
-                className="css-gg4vpm"
-              >
-                <p
-                  className="chakra-text css-13ub55k"
-                >
-                  Apartment
-                </p>
-                <p
-                  className="chakra-text css-yz4njg"
-                >
-                  2
-                   Bedrooms • 
-                  1
-                   Baths •
-                   
-                  200
-                   sqft
-                </p>
-              </div>
-              <h2
-                className="chakra-heading css-1feqh3k"
-              >
-                Modern Apartment Downtown Los Angeles
-              </h2>
-              <p
-                className="chakra-text css-1duy3yu"
-              >
-                $
-                2500
-                /mo.
-              </p>
-              <div
-                className="css-k008qs"
-              >
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <p
-                className="chakra-text css-13i9bpu"
-              >
-                2465 Evergreen Lane
-                , 
-                90042
-                 
-                California
-              </p>
-              <p
-                className="chakra-text css-nu9dau"
-              >
-                0
-                 day(s) ago
-              </p>
-            </div>
+              Visit, buy or rent.
+            </p>
+            <button
+              className="chakra-button css-5c2176"
+              href="/listings"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              type="button"
+            >
+              Show Listings
+            </button>
           </div>
-        </a>
-        <a
-          className="css-p6s8gx"
-          href="/estate/undefined"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="css-z3nv2h"
-          >
-            <div
-              className="css-1yzea99"
-            >
-              <div
-                style={
-                  Object {
-                    "bottom": 0,
-                    "boxSizing": "border-box",
-                    "display": "block",
-                    "left": 0,
-                    "margin": 0,
-                    "overflow": "hidden",
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <img
-                  alt="card_image"
-                  data-nimg="fill"
-                  decoding="async"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                  style={
-                    Object {
-                      "border": "none",
-                      "bottom": 0,
-                      "boxSizing": "border-box",
-                      "display": "block",
-                      "height": 0,
-                      "left": 0,
-                      "margin": "auto",
-                      "maxHeight": "100%",
-                      "maxWidth": "100%",
-                      "minHeight": "100%",
-                      "minWidth": "100%",
-                      "objectFit": "cover",
-                      "objectPosition": undefined,
-                      "padding": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    }
-                  }
-                />
-                <noscript>
-                  <img
-                    alt="card_image"
-                    data-nimg="fill"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="100vw"
-                    src="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=3840&q=75"
-                    srcSet="/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Freal-estate-2ff9c.appspot.com%2Fo%2FEstates%3Falt%3Dmedia%26token%3Da3fbec61-d9e2-484c-be45-f1f667d1f58f&w=3840&q=75 3840w"
-                    style={
-                      Object {
-                        "border": "none",
-                        "bottom": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": 0,
-                        "left": 0,
-                        "margin": "auto",
-                        "maxHeight": "100%",
-                        "maxWidth": "100%",
-                        "minHeight": "100%",
-                        "minWidth": "100%",
-                        "objectFit": "cover",
-                        "objectPosition": undefined,
-                        "padding": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                        "width": 0,
-                      }
-                    }
-                  />
-                </noscript>
-              </div>
-            </div>
-            <div
-              className="chakra-stack css-n21gh5"
-            >
-              <div
-                className="css-gg4vpm"
-              >
-                <p
-                  className="chakra-text css-13ub55k"
-                >
-                  Apartment
-                </p>
-                <p
-                  className="chakra-text css-yz4njg"
-                >
-                  2
-                   Bedrooms • 
-                  1
-                   Baths •
-                   
-                  200
-                   sqft
-                </p>
-              </div>
-              <h2
-                className="chakra-heading css-1feqh3k"
-              >
-                Modern Apartment Downtown Los Angeles
-              </h2>
-              <p
-                className="chakra-text css-1duy3yu"
-              >
-                $
-                2500
-                /mo.
-              </p>
-              <div
-                className="css-k008qs"
-              >
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <svg
-                  className="chakra-icon css-1t3c8dd"
-                  focusable={false}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <p
-                className="chakra-text css-13i9bpu"
-              >
-                2465 Evergreen Lane
-                , 
-                90042
-                 
-                California
-              </p>
-              <p
-                className="chakra-text css-nu9dau"
-              >
-                0
-                 day(s) ago
-              </p>
-            </div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
     <div

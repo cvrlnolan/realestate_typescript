@@ -5,4 +5,4 @@ export const categoryOptions = [
   { key: "Loft", text: "Loft", value: "Loft" },
   { key: "Studio", text: "Studio", value: "Studio" },
   { key: "Roomlet", text: "Roomlet", value: "Roomlet" },
-]
+];
