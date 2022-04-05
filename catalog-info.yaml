@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: realestate_typescript
+  annotations:
+    github.com/project-slug: cvrlnolan/realestate_typescript
+spec:
+  type: other
+  lifecycle: unknown
+  owner: george-group
